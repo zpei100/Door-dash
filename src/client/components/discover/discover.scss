@@ -1,0 +1,21 @@
+#discover {
+  color: white;
+  background-color: $red;
+  padding: 4%;
+
+  //hack; arrow is not svg, and is a square. Later fix it to be svg, and remove padding bottom;
+  padding-bottom: 1%;
+
+  img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  p {
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0;
+    font-weight: 400;
+  }
+}
