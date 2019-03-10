@@ -1,1 +1,34 @@
 @import './css/init.scss';
+@import './components/nav/nav';
+
+* { font-family: Lato }
+body { margin: 0 }
+
+#nav {
+  color: $red;
+  border-bottom: 0.2px solid lightgray;
+  position: relative;
+
+  //doordash title and logo
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  //sign in and sign up buttons
+  button {
+    &:nth-child(1) {
+      color: $red;
+      background: transparent;
+    }
+
+    &:nth-child(2) {
+      background-color: $red;
+      color: white;
+    }
+
+    width: 100px;
+    font-size: 14px;
+  }
+}

@@ -1,3 +1,15 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "files.exclude": {
+    "__error": "Not found",
+    ".babelrc": true,
+    "package-lock.json": true,
+    "package.json": true,
+    "webpack.config.js": true,
+    "node_modules": true,
+    ".gitignore": true,
+    "dist/js": true,
+    "dist/index.html": true,
+    "src/server": true
+  }
 }

@@ -23,13 +23,17 @@
 .thin{font-weight: 100;}
 .light{font-weight: 300;}
 .regular{font-weight: 400;}
-.bold{font-weight: 700;}
+.bold{font-weight: 550;}
+.heavy{font-weight: 700;}
+.xbold{font-weight: 850;}
+.xheavy{font-weight: 1000;}
+
 .italic{font-style: italic;}
 .normal{font-style: normal;}
-.ls-small{letter-spacing: 2px;}
-.ls-medium{letter-spacing: 4px;}
-.ls-large{letter-spacing: 8px;}
-.ls-xlarge{letter-spacing: 12px;}
+.ls-1{letter-spacing: 1px;}
+.ls-2{letter-spacing: 2px;}
+.ls-3{letter-spacing: 3px;}
+.ls-4{letter-spacing: 4px;}
 .uppercase{text-transform: uppercase;}
 .color-emphasis-1{color: #FF4056}
 .color-emphasis-2{color: #000;}
@@ -47,6 +51,16 @@
 .p-2{padding: 2%}
 .p-1{padding: 1%}
 
+.m-5{margin: 5%}
+.m-4{margin: 4%}
+.m-3{margin: 3%}
+.m-2{margin: 2%}
+.m-1{margin: 1%}
+
+/* ==== width and height ==== */
+.w-100{width: 100%};
+.h-100{height: 100%};
+
 /* ==== font sizes ==== */
 .size-1{font-size: 1.2vw}
 .size-2{font-size: 1.4vw}
@@ -58,3 +72,32 @@
 .size-8{font-size: 5vw}
 .size-9{font-size: 5.5vw}
 .size-10{font-size: 6vw}
+
+.px-10{font-size: 10px}
+.px-12{font-size: 12}
+.px-14{font-size: 14px}
+.px-16{font-size: 16px}
+.px-18{font-size: 18px}
+.px-20{font-size: 20px}
+.px-22{font-size: 22px}
+
+/* ==== border ==== */
+.round-1{border-radius: 12px};
+.round-2{border-radius: 14px};
+.round-3{border-radius: 16px};
+.round-4{border-radius: 18px};
+.round-5{border-radius: 20px};
+.circle {border-radius: 50%};
+.border-transparent{border: transparent};
+
+/* ==== display ==== */
+.d-flex {display: flex};
+
+/* ==== justify ==== */
+.center{margin: auto};
+.end{margin-left: auto};
+.start{margin-right: auto};
+
+.middle{align-self: center};
+.top{align-self: flex-start};
+.bot{align-self: flex-end};

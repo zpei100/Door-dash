@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Nav from './nav/nav.jsx';
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        Content goes here        
-      </div>
+      <React.Fragment>
+        <Nav></Nav>
+      </React.Fragment>
     );
   }
 }
