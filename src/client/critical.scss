@@ -1,34 +1,44 @@
 @import './css/init.scss';
 @import './components/nav/nav';
+@import './css/variables';
 
 * { font-family: Lato }
 body { margin: 0 }
 
-#nav {
-  color: $red;
-  border-bottom: 0.2px solid lightgray;
-  position: relative;
-
-  //doordash title and logo
-  .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+#hero {
+  height: calc(100vh - 50px);
+  background: url('/food.jpg');
+  background-size: cover;
+  
+  & > div {
+    padding: 2.5%;
   }
 
-  //sign in and sign up buttons
-  button {
-    &:nth-child(1) {
-      color: $red;
-      background: transparent;
+  .info {
+    p {margin-top: 0.5%; margin-bottom: 0.5%}
+    margin-bottom: 2%;
+    color: white;
+  }
+
+  .search {
+    display: inline-flex;
+    white-space: nowrap;
+    border-radius: 20px;
+    
+    //search bar, including icon
+    & > div { 
+      background: white;
+      display: flex;
+      align-items: center;
+      width: 380px; 
     }
 
-    &:nth-child(2) {
+    input {width: 100%}
+    button {
+      box-sizing: border-box;
       background-color: $red;
       color: white;
+      padding: 2% 5%;
     }
-
-    width: 100px;
-    font-size: 14px;
   }
 }
