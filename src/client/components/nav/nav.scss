@@ -3,8 +3,11 @@
 #nav {
   color: $red;
   border-bottom: 0.2px solid lightgray;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  background: white;
   height: 50px;
+  z-index: 1;
 
   //doordash title and logo
   .logo {

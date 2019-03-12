@@ -1,44 +1,62 @@
-@import './css/init.scss';
-@import './components/nav/nav';
 @import './css/variables';
+@import './css/init.scss';
+
+@import './components/nav/nav';
+@import './components/hero/hero';
+@import './components/discover/discover';
+@import './components/search/search';
+
 
 * { font-family: Lato }
-body { margin: 0 }
+body { margin: 0; }
+#app {overflow-x: hidden}
 
-#hero {
-  height: calc(100vh - 50px);
-  background: url('/food.jpg');
-  background-size: cover;
-  
-  & > div {
-    padding: 2.5%;
+
+.slide {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.slide-cover {
+  background-color: white;
+  position: absolute;
+  width: 50%;
+  right: 0%;
+  height: 100%;
+}
+
+.slide-image {
+  height: 100%;
+  width: 50%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.slide-description {
+  width: 50%;
+  padding: 6%;
+  box-sizing: border-box;
+
+  p {margin: 4%}
+
+  p:nth-child(1) {
+    color: lighten(teal, 4);
+    letter-spacing: 2px;
+    font-size: 40px;
+    font-weight: 600;
   }
 
-  .info {
-    p {margin-top: 0.5%; margin-bottom: 0.5%}
-    margin-bottom: 2%;
-    color: white;
+  p:nth-child(2) {
+    color: lighten(gray, 10); 
+    letter-spacing: 0.5px;
+    font-size: 18px;
   }
 
-  .search {
-    display: inline-flex;
-    white-space: nowrap;
-    border-radius: 20px;
-    
-    //search bar, including icon
-    & > div { 
-      background: white;
-      display: flex;
-      align-items: center;
-      width: 380px; 
-    }
-
-    input {width: 100%}
-    button {
-      box-sizing: border-box;
-      background-color: $red;
-      color: white;
-      padding: 2% 5%;
-    }
+  p:nth-child(3) {
+    color: lighten(teal, 4);
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 600;
   }
 }

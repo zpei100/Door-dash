@@ -1,0 +1,23 @@
+@import '../../css/variables.scss';
+
+.search {
+  display: inline-flex;
+  white-space: nowrap;
+  border-radius: 20px;
+  
+  //search bar, including icon
+  & > div { 
+    background: white;
+    display: flex;
+    align-items: center;
+    width: 380px; 
+  }
+
+  input {width: 100%}
+  button {
+    box-sizing: border-box;
+    background-color: $red;
+    color: white;
+    padding: 2% 5%;
+  }
+}

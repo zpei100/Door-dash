@@ -8,6 +8,7 @@
     "node_modules": true,
     ".gitignore": true,
     "dist/js": true,
-    "dist/index.html": true
+    "dist/index.html": true,
+    ".vscode": true
   }
 }
