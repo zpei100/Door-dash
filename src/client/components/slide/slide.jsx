@@ -33,23 +33,6 @@ export default class Slide extends Component {
         }
       }
     })
-
-    // $(window).scroll(function() {
-    //   if(new Date() - time > wait) {
-    //     time = new Date();
-    //     const pWindow = $(this).scrollTop();
-    //     const pDiff = pContainer - pWindow;
-    //     const percentageDiff = pDiff / container.height();
-
-    //     console.log(percentageDiff)
-
-    //     if(percentageDiff > 0.5) right = '0%';
-    //     else if(percentageDiff < -0.25) right = '-50%';
-    //     else right = `${((2*(percentageDiff+0.25))/3-0.5)*100}%`
-        
-    //     cover.css({right})
-    //   }
-    // })
   }
 
   render() {

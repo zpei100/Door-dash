@@ -12,8 +12,8 @@ export default class Hero extends Component {
           <Info></Info>
           <Search></Search>
         </div>
-        <div className="hero-image hero-left"><img src={Image02}/></div>
-        <div className="hero-image hero-right"><img src={Image01}/></div>
+        <img className="hero-image image-left" src={Image02}/>
+        <img className="hero-image image-right" src={Image01}/>
       </div>
     );
   }

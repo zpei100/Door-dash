@@ -1,31 +1,31 @@
-// #hero {
-//   height: 100vh;
-//   position: absolute;
-//   // background: url('/food.jpg');
-//   // background-size: cover;
+#hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
   
-//   & > div {
-//     padding: 2.5%;
-//   }
+  #hero-description { padding: 2.5% }
 
-//   .hero-image {
-//     width: 75%;
-//     position: absolute;
+  .hero-image {
+    object-fit: cover;
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
 
-//     &:nth-child(1) {
-//       background: url('./images/hero02.jpg');
-//       left: 0;
-//     }
+  .image-left {
+    left: 0;
+  }
 
-//     &:nth-child(2) {
-//       background: url('./images/hero01.jpg');
-//       right: 0;
-//     }
-//   }
+  .image-right {
+    right: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, calc(200% - 100vw) 100%);
+  }
 
-//   .info {
-//     p {margin-top: 0.5%; margin-bottom: 0.5%}
-//     margin-bottom: 2%;
-//     color: white;
-//   }
-// }
+  .info {
+    p {margin-top: 0.5%; margin-bottom: 0.5%}
+    font-weight: 600;
+    margin-bottom: 2%;
+    color: white;
+  }
+}

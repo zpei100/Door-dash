@@ -13,11 +13,11 @@ export default class App extends Component {
       <React.Fragment>
         <Nav/>
         <Hero />
-        {/* <Discover />
+        <Discover />
         <Slide 
           title="Satisfy your cravings" 
           paragraph="Experience a world of food, with your favorite restaurants at your fingertips." 
-          linkText="I'm ready to eat"/> */}
+          linkText="I'm ready to eat"/>
       </React.Fragment>
     );
   }
