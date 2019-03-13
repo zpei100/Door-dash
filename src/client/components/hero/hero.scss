@@ -33,4 +33,7 @@
     margin-bottom: 2%;
     color: white;
   }
+
+  .info-text { transition: 0.5s; display: inline-block; position: absolute; }
+  .next { transition: 0.5s; display: inline-block; position: absolute; opacity: 0}
 }
