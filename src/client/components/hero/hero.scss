@@ -15,11 +15,16 @@
 
   .image-left {
     left: 0;
+    transition: 0.7s linear;
+    clip-path: polygon(0% 0%, calc(100vw - 100%) 0%, 100% 100%, 0% 100%);
+    object-position: right;
   }
 
   .image-right {
     right: 0;
+    transition: 0.7s linear;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, calc(200% - 100vw) 100%);
+    object-position: bottom;
   }
 
   .info {

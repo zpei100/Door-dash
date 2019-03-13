@@ -1,7 +1,14 @@
 #footer {
   width: 100%;
-  background: darken(darkgrey, 10);
+  background: #1D201F;
   padding: 2%;
+  color: white;
+  font-size: 14px;
+  
+  ul { 
+    list-style: none; 
+    padding: 0; 
+  }
 }
 
 .footer-top {
