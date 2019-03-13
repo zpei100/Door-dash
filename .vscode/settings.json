@@ -4,8 +4,6 @@
     "__error": "Not found",
     ".babelrc": true,
     "package-lock.json": true,
-    "package.json": true,
-    "node_modules": true,
     ".gitignore": true,
     "dist/index.html": true,
     ".vscode": true
