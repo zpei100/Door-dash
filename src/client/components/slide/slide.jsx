@@ -37,9 +37,17 @@ export default class Slide extends Component {
   }
 
   render() {
+    const slideStyle = {
+      overflow: 'hidden',
+      height: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      position: 'relative'
+    }
+
     const { direction, Image } = this.props;
     return (
-      <div ref={e => this.container = $(e)} className="slide" style={{flexDirection: direction === 'right' ? 'row' : 'row-reverse'}}>
+      <div ref={e => this.container = $(e)} style={{flexDirection: direction === 'right' ? 'row' : 'row-reverse', ...slideStyle}}>
         <Description {...this.props}/>
         <ImageSlide direction={direction} Image={Image}/>
         <Cover direction={direction}/>

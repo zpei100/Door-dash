@@ -9,7 +9,7 @@ export default class Search extends Component {
           <span className="p-2"><Flag/></span>
           <input 
             type="text" 
-            className="px-14 ls-1 p-3 border-transparent"
+            className="px-14 ls-1 border-transparent"
             placeholder="Enter your delivery address"
           />
         </div>
