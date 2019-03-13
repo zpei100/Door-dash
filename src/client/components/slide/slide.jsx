@@ -5,6 +5,8 @@ import Cover from './cover.jsx';
 
 export default class Slide extends Component {
   componentDidMount() {
+    const { direction } = this.props;
+
     const $container = this.container;
     const $cover = $container.find('.slide-cover');
     const $window = $(window);
@@ -12,7 +14,6 @@ export default class Slide extends Component {
     const pContainer = $container.position().top;
     
     const wait = 15;
-    let right = '0%';
     let time = new Date();
 
     const startView = 0.6;
@@ -25,22 +26,23 @@ export default class Slide extends Component {
         const pDiff = pContainer - pWindow;
         const pPercentage = pDiff / $container.height();
 
-        if(pPercentage > startView) $cover.css({right: '0%'});
-        else if(pPercentage < endView) $cover.css({right: '-60%'});
+        if(pPercentage > startView) $cover.css({[direction]: '0%'});
+        else if(pPercentage < endView) $cover.css({[direction]: '-60%'});
         else {
           const percentageShown = -0.6/(endView - startView) * (pPercentage - startView) * 100;
-          $cover.css({right: `${percentageShown}%`})
+          $cover.css({[direction]: `${percentageShown}%`})
         }
       }
     })
   }
 
   render() {
+    const { direction, Image } = this.props;
     return (
-      <div ref={e => this.container = $(e)} className="slide">
+      <div ref={e => this.container = $(e)} className="slide" style={{flexDirection: direction === 'right' ? 'row' : 'row-reverse'}}>
         <Description {...this.props}/>
-        <ImageSlide />
-        <Cover />
+        <ImageSlide direction={direction} Image={Image}/>
+        <Cover direction={direction}/>
       </div>
     );
   }

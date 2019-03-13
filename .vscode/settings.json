@@ -7,7 +7,6 @@
     "package.json": true,
     "node_modules": true,
     ".gitignore": true,
-    "dist/js": true,
     "dist/index.html": true,
     ".vscode": true
   }

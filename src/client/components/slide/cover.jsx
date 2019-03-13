@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 
 export default class Cover extends Component {
   render() {
+    const { direction } = this.props;
+    const style = {[direction]: '0%'}
+
     return (
-      <div className="slide-cover" />
+      <div className="slide-cover" style={style} />
     );
   }
 }

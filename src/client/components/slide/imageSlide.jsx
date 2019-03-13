@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import Image from '../assets/images/imageSlide01.jpg';
 
 export default class ImageSlide extends Component {
   render() {
+    const { direction, Image } = this.props;
+  
+    const leftSlice = 'polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%)';
+    const rightSlice = 'polygon(0% 0%, 100% 0%, 100% 100%, 50% 100%)';
+    const polygon = direction === 'right' ? rightSlice : leftSlice;
+    const margin = direction === 'right' ? 'marginLeft' : 'marginRight'
+
+    console.log(direction)
+    
     return (
-      <img className="slide-image" src={Image}/>
+      <img className="slide-image" src={Image} style={{clipPath: polygon, [margin]: 'auto'}}/>
     );
   }
 }
