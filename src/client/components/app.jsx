@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
+
 import Nav from './nav/nav.jsx';
 import Hero from './hero/hero.jsx';
 import Discover from './discover/discover.jsx';
 import Slide from './slide/slide.jsx';
 import Carousel from './carousel/carousel.jsx';
-import $ from 'jquery';
+import Order from './order/order.jsx';
+import Footer from './footer/footer.jsx';
 
 import Image1 from './assets/images/imageSlide01.jpg';
 import Image2 from './assets/images/imageSlide02.jpg';
@@ -65,6 +68,8 @@ export default class App extends Component {
         />
 
         <Carousel carouselData={this.carouselData}/>
+        <Order />
+        <Footer />
       </React.Fragment>
     );
   }

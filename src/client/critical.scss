@@ -6,40 +6,28 @@
 @import './components/discover/discover';
 @import './components/search/search';
 @import './components/slide/slide';
+@import './components/carousel/carousel';
+@import './components/footer/footer';
+@import './components/order/order';
 
 
 * { font-family: Lato }
 body { margin: 0; }
 
-#carousel-container {
+#footer {
+  width: 100%;
+  background: #1D201F;
+  padding: 2%;
+  color: white;
+  font-size: 14px;
+  
+  ul { 
+    list-style: none; 
+    padding: 0; 
+  }
+}
+
+.footer-top {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 65px;
+  justify-content: space-around;
 }
-
-#indicator-buttons { margin: 5% }
-
-.indicator-button {
-  height: 8px;
-  width: 35px;
-  margin: 10px;
-  border: none;
-  border-radius: 12px;
-  background: lightgrey; 
-  cursor: pointer;
-}
-
-#button-float {
-  background: $red;
-  position: absolute;
-  transition: 0.2s ease-in;
-}
-
-.caption {
-  text-align: center;
-  .caption-title { font-size: 24px; font-weight: 600; letter-spacing: 2px}
-  .caption-paragraph { font-size: 16px; color: grey }
-}
-
-.carousel-title {font-size: 36px; font-weight: 600; letter-spacing: 2.5px; text-align: center; margin: 4%}
