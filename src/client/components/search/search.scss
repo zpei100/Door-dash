@@ -1,24 +1,30 @@
 @import '../../css/variables.scss';
 
 .search {
-  display: inline-flex;
+  display: table !important;
   white-space: nowrap;
-  border-radius: 20px;
+  border-radius: 30px;
+  border: 2.5px solid transparent;
+  
+  input:focus {
+    outline: none;
+  }
   
   //search bar, including icon
   & > div { 
     background: white;
-    display: flex;
+    display: table-cell;
     align-items: center;
-    width: 380px; 
-    padding: 0 !important;
+    width: 430px; 
   }
 
   input {width: 100%}
+
   button {
+    display: table-cell;
     box-sizing: border-box;
     background-color: $red;
     color: white;
-    padding: 2% 5%;
+    padding: 7% 14%;
   }
 }
