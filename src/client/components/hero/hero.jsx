@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Info from '../info/info.jsx';
 import Search from '../search/search.jsx';
+import GetApp from '../getApp/getApp.jsx';
 
 import Artisian from './images/artisian.jpg';
 import Bread from './images/bread.jpg';
@@ -84,7 +85,7 @@ export default class Hero extends Component {
 
         //append new span tag for next info text:
         $('#info-block').append(`
-          <span class="next"> &nbsp; ${this.keywords[(this.counter+1)%images.length]}</span> 
+          <span class="next"> ${this.keywords[(this.counter+1)%images.length]}</span> 
         `)
         
         //prepend new images with zindex of 2 after animation is complete;
@@ -104,6 +105,7 @@ export default class Hero extends Component {
           <Info word={this.keywords[this.counter]} next={this.keywords[(this.counter+1)%images.length]}></Info>
           <Search></Search>
         </div>
+        <GetApp color="white" bgColor="white" hoverColor="lightgrey"/>
         <img className="hero-image image-left active-left" src={images[this.counter].left}/>
         <img className="hero-image image-right active-right" src={images[this.counter].right}/>
         <img className="hero-image image-left" src={images[(this.counter+1)%images.length].left} style={{zIndex: -2}}/>

@@ -34,6 +34,8 @@
     color: white;
   }
 
-  .info-text { transition: 0.5s; display: inline-block; position: absolute; }
-  .next { transition: 0.5s; display: inline-block; position: absolute; opacity: 0}
+  .info-text { transition: 0.5s; display: inline-block; position: absolute; margin: 0 1%; }
+  .next { transition: 0.5s; display: inline-block; position: absolute; opacity: 0; margin: 0 1%;}
+
+  .get-app { position: absolute; bottom: 20px; left: 30px; width: auto }
 }

@@ -70,7 +70,7 @@ export default class Carousel extends Component {
             <Caption title={title} paragraph={paragraph}/>
           </div>
 
-          <div id="indicator-buttons" style={{display: 'flex', justifyContent: 'center', position: 'relative', margin: '15% 0'}} >
+          <div id="indicator-buttons" style={{display: 'flex', justifyContent: 'center', position: 'relative'}} >
             <button className="indicator-button" onClick={e => this.slide(e, 1)}></button>
             <button className="indicator-button" onClick={e => this.slide(e, 2)}></button>
             <button className="indicator-button" onClick={e => this.slide(e, 3)}></button>

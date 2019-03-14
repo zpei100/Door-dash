@@ -5,7 +5,7 @@
   padding-top: 65px;
 }
 
-#indicator-buttons { margin: 15% }
+#indicator-buttons { margin: 8% }
 
 .indicator-button {
   height: 8px;
@@ -21,6 +21,10 @@
   background: $red;
   position: absolute;
   transition: 0.2s ease-in;
+}
+
+#captions {
+  height: 100px;
 }
 
 .caption {

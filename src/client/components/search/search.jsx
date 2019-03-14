@@ -4,11 +4,11 @@ import $ from 'jquery';
 
 export default class Search extends Component {
   highlight() {
-    this.search.css({border: '2.5px #80CED7 solid'});
+    this.search.css({boxShadow: '0 0 3pt 2pt #80CED7'});
   }
 
   removeHighlight() {
-    this.search.css({border: '2.5px solid transparent'})
+    this.search.css({boxShadow: 'none'})
   }
 
   render() {
@@ -26,7 +26,8 @@ export default class Search extends Component {
         </div>
         <button 
           className="px-14 ls-1 border-transparent heavy"
-          style={{display: 'table-cell'}}
+          onMouseEnter={e => $(e.target).css({filter: 'brightness(80%)'})}
+          onMouseLeave={e => $(e.target).css({filter: 'brightness(100%)'})}
         >
           Find Restaurants
         </button>
