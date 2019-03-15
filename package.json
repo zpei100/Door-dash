@@ -7,7 +7,7 @@
     "webpack": "webpack -w",
     "sass": "sass --watch src/client/critical.scss:dist/css/styles.css src/client/main.scss:dist/css/main.css",
     "server": "nodemon src/server/index.js",
-    "buidl": "webpack -p && sass --no-source-map --style compressed src/client/critical.scss:dist/css/styles.css src/client/main.scss:dist/css/main.css",
+    "build": "webpack -p && sass --no-source-map --style compressed src/client/critical.scss:dist/css/styles.css src/client/main.scss:dist/css/main.css",
     "start": "node src/server/index.js"
   },
   "keywords": [],
