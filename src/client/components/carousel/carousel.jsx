@@ -7,8 +7,6 @@ import Image2 from './images/carousel-image-2.jpg';
 import Image3 from './images/carousel-image-3.jpg';
 import Iphone from './images/iphone.jpg';
 
-import 'bootstrap/dist/css/bootstrap.css';
-
 export default class Carousel extends Component {
   constructor() {
     super();

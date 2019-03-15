@@ -13,8 +13,6 @@ import Image1 from './assets/images/imageSlide01.jpg';
 import Image2 from './assets/images/imageSlide02.jpg';
 import Image3 from './assets/images/imageSlide03.jpg';
 
-window.$ = $;
-
 export default class App extends Component {
   constructor() {
     super();
