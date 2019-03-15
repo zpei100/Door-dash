@@ -4,8 +4,6 @@
     "__error": "Not found",
     ".babelrc": true,
     "package-lock.json": true,
-    ".gitignore": true,
-    "dist/index.html": true,
     ".vscode": true
   }
 }

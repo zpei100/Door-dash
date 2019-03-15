@@ -2,7 +2,6 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
   entry: path.resolve(__dirname, 'src/client/index.jsx'),
   output: {
     filename: 'js/[name].bundle.js',
@@ -21,21 +20,23 @@ module.exports = {
       exclude: [
         path.resolve(__dirname, 'node_modules')
       ],
-      loader: 'babel-loader'
-    },{
-      test: /.css$/,
-      loader: ['style-loader', 'css-loader']
-    },
-    {
-      test: /\.(png|jpg|gif|eot|ttf|woff|svg)$/,
-      use: [
-        {
-          loader: 'file-loader?name=[name].[ext]',
-          options: {},
-        },
-      ],
-    },
-  ]
+        loader: 'babel-loader'
+      },{
+        test: /.css$/,
+        loader: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|eot|ttf|woff|svg)$/,
+        use: [
+          {
+            loader: 'file-loader?name=[name].[ext]',
+            options: {
+              outputPath: 'assets/images'
+            },
+          },
+        ],
+      },
+    ]
   },
   devtool: 'source-map',
 };
