@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Description from './description.jsx';
 import ImageSlide from './imageSlide.jsx';
 import Cover from './cover.jsx';
+import $ from 'jquery';
 
 export default class Slide extends Component {
   componentDidMount() {
