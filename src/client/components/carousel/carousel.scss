@@ -3,6 +3,9 @@
   flex-direction: column;
   align-items: center;
   padding-top: 65px;
+  height: 390px;
+  overflow: hidden;
+  position: relative; 
 }
 
 #indicator-buttons { margin: 8% }
@@ -15,12 +18,14 @@
   border-radius: 12px;
   background: lightgrey; 
   cursor: pointer;
+  &:focus { outline: none }
 }
 
 #button-float {
   background: $red;
   position: absolute;
   transition: 0.2s ease-in;
+  padding: 1px 6px;
 }
 
 #captions {
@@ -29,8 +34,15 @@
 
 .caption {
   text-align: center;
+  div { margin: 2% 0 }
   .caption-title { font-size: 24px; font-weight: 600; letter-spacing: 2px}
   .caption-paragraph { font-size: 16px; color: grey }
 }
 
-.carousel-title {font-size: 36px; font-weight: 600; letter-spacing: 2.5px; text-align: center; margin: 4%}
+.carousel-title {
+  font-size: 36px; 
+  font-weight: 600; 
+  letter-spacing: 2.5px; 
+  text-align: center; 
+  margin: 2%
+}

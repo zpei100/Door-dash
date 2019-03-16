@@ -14,7 +14,6 @@
     "dist/js": true,
     "dist/index.html": true,
     "node_modules": true,
-    "src/client/index.html": true,
     "src/client/main.scss": true,
     "src/client/components/button": true,
     "src/client/components/nav": true

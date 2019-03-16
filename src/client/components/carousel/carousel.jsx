@@ -17,14 +17,16 @@ export default class Carousel extends Component {
 
   componentDidMount() {
     const cp = $('#button-float').offset().left;
-    const move = $(`.indicator-button:nth-child(1)`).offset().left - cp
+    const move = $(`.indicator-button:nth-child(1)`).offset().left - cp - 30;
     $('#button-float').css({transform: `translateX(${move}px)`});
     this.floatPosition = move;
   }
 
   slide(e, id) {
-    this.setState({active: id})
-    $('.active').removeClass('active');
+    this.setState({active: id});
+    const $carouselInner = $('.carousel-inner');
+    
+    $carouselInner.find('.active').removeClass('active');
     $(`.carousel-item:nth-child(${id})`).addClass('active')
 
     const move = $(`.indicator-button:nth-child(${id})`).offset().left - $(`.indicator-button:nth-child(1)`).offset().left
@@ -46,7 +48,7 @@ export default class Carousel extends Component {
     return (
       <React.Fragment>
         <p className="carousel-title">How it works</p>
-        <div id="carousel-container" style={{overflow: 'hidden', position: 'relative', paddingTop: '65px', height: '460px'}}>
+        <div id="carousel-container">
           <img src={Iphone} style={{position: 'absolute', width: '275px', transform: 'translateX(2px) translateY(-65px)', zIndex: -1}} />
           <div ref={e => this.carousel = $(e)} id="carousel" className="carousel slide carousel-fade" style={{width: '234px'}}>
             <div className="carousel-inner">
