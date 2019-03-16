@@ -3,7 +3,7 @@
   width: 100%;
   position: relative;
   
-  .description { 
+  & > .description { 
     padding: 2.5%;
     align-self: center;
     width: 100%; 
@@ -16,36 +16,49 @@
       height: 100%;
       position: absolute;
       z-index: -2;
+      transition: 0.7s linear;
+    }
+    .active { z-index: -1 }
+
+    .left {
+      left: 0;
+      clip-path: polygon(0% 0%, calc(100vw - 100%) 0%, 100% 100%, 0% 100%);
+      object-position: right;
+    }
+  
+    .right {
+      right: 0;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, calc(200% - 100vw) 100%);
+      object-position: bottom;
+    }
+  }
+
+
+
+  #hero-description {
+    p { 
+      margin-top: 0.5%; 
+      margin-bottom: 0.5% 
     }
 
-    .active { z-index: -1 }
-  }
-
-  
-
-  .left {
-    left: 0;
-    transition: 0.7s linear;
-    clip-path: polygon(0% 0%, calc(100vw - 100%) 0%, 100% 100%, 0% 100%);
-    object-position: right;
-  }
-
-  .right {
-    right: 0;
-    transition: 0.7s linear;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, calc(200% - 100vw) 100%);
-    object-position: bottom;
-  }
-
-  .info {
-    p {margin-top: 0.5%; margin-bottom: 0.5%}
     font-weight: 600;
     margin-bottom: 2%;
     color: white;
+
+    .word { 
+      transition: 0.5s; 
+      display: inline-block; 
+      position: absolute; 
+      margin: 0 1%; 
+    }
+  
+    .next { opacity: 0 }
   }
 
-  .info-text { transition: 0.5s; display: inline-block; position: absolute; margin: 0 1%; }
-  .next { transition: 0.5s; display: inline-block; position: absolute; opacity: 0; margin: 0 1%;}
-
-  .get-app { position: absolute; bottom: 20px; left: 30px; width: auto }
+  .get-app { 
+    position: absolute; 
+    bottom: 20px; 
+    left: 30px; 
+    width: auto 
+  }
 }

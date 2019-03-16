@@ -23,9 +23,10 @@ import Waffle from './images/waffle.jpg';
 */
 
 //ordered by order of appearance
+
 export default [
-  {left: Taco, right: Waffle},
-  {left: Toast, right: BurgerBoard},
-  {left: Fancy, right: GreenCake},
-  {left: Plate, right: ColorBread},
+  {word: 'days', left: Taco, right: Waffle},
+  {word: 'feelings', left: Toast, right: BurgerBoard},
+  {word: 'mornings', left: Fancy, right: GreenCake},
+  {word: 'stories', left: Plate, right: ColorBread},
 ]

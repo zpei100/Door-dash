@@ -1,39 +1,41 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+
 import images from './data';
 
 import Info from '../info/info.jsx';
 import Search from '../search/search.jsx';
 import GetApp from '../getApp/getApp.jsx';
 
+window.$ = $;
+
 export default class Hero extends Component {
   constructor() {
     super();
-    this.state = { active: 0 }
     this.counter = 0;
-    this.keywords = ['days', 'feelings', 'mornings', 'stories']
   }
 
   componentDidMount() {
-
     // 700 ms is the animation time
     // 3000 ms is cycle time
     // unable to to this via set state for now, since changes to clip path is permanent and affects the same image, even when the src is changed; The hack is the remove it out of the DOM and prepend new ones.
 
     // this defeats the purpose of using React, and must be fixed later
 
-    const $lw = $('#info-lw');
+    const $start = $('.start');
+    const $hero = $('#hero');
 
     setInterval(() => {
       const $imageLeft = $('.left.active');
       const $imageRight = $('.right.active');
-      const $infoText = $('.info-text');
-      const $infoTextNext = $('.next');
-      const lw = $lw.width() + $lw.position().left;
+      const $word = $('.word').first();
+      const $nextWord = $('.next');
+      const pStart = $start.width() + $start.position().left;
+      const $description = $('#hero-description .description');
 
       //text vanish animation:
-      $infoText.css({opacity: 0, transform: 'translateX(-20%)'});
-      $infoTextNext.css({left: `${lw}px`, opacity: 1})
+      $word.css({opacity: 0, transform: 'translateX(-20%)'});
+      $nextWord.css({left: `${pStart}px`, opacity: 1})
 
       // diagonal slide animations:
       $imageLeft.css({
@@ -46,20 +48,20 @@ export default class Hero extends Component {
 
       setTimeout(() => {
         //delete old info text;
-        $infoText.remove();
-        $infoTextNext.removeClass('next').addClass('info-text');
+        $word.remove();
+        $nextWord.removeClass('next');
 
         //delete old images
         $imageLeft.remove();
         $imageRight.remove();
         
-        $('.left', '.right').addClass('active');
+        $('.left').addClass('active');
+        $('.right').addClass('active');
    
         this.counter++;
-
         //append new span tag for next info text:
-        $('#info-block').append(`
-          <span class="next"> ${this.keywords[(this.counter+1)%images.length]}</span> 
+        $description.append(`
+          <span class="word next"> ${images[(this.counter+1)%images.length].word}</span> 
         `)
         
         //prepend new images with zindex of 2 after animation is complete;
@@ -77,8 +79,8 @@ export default class Hero extends Component {
       <div id="hero" className="d-flex">
         <div className="description">
           <Info 
-            word={this.keywords[this.counter]} 
-            next={this.keywords[(this.counter+1)%images.length]} />
+            word={images[this.counter].word} 
+            next={images[(this.counter+1)%images.length].word} />
           <Search />
         </div>
 
@@ -89,10 +91,10 @@ export default class Hero extends Component {
         />
 
         <div className="images">
-        <img className="left active" src={images[this.counter].left}/>
-        <img className="right active" src={images[this.counter].right}/>
-        <img className="left" src={images[(this.counter+1)%images.length].left} />
-        <img className="right" src={images[(this.counter+1)%images.length].right} />
+          <img className="left active" src={images[this.counter].left}/>
+          <img className="right active" src={images[this.counter].right}/>
+          <img className="left" src={images[(this.counter+1)%images.length].left} />
+          <img className="right" src={images[(this.counter+1)%images.length].right} />
         </div>
       </div>
     );
