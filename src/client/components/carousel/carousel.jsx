@@ -6,6 +6,7 @@ import Image1 from './images/carousel-image-1.jpg';
 import Image2 from './images/carousel-image-2.jpg';
 import Image3 from './images/carousel-image-3.jpg';
 import Iphone from './images/iphone.jpg';
+import Data from './data';
 
 export default class Carousel extends Component {
   constructor() {
@@ -32,7 +33,7 @@ export default class Carousel extends Component {
   }
 
   render() {
-    const {title, paragraph} = this.props.carouselData[this.state.active - 1]
+    const {title, paragraph} = Data[this.state.active - 1]
     const style = {
       caption: {
         position: 'absolute',

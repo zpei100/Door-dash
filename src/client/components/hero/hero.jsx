@@ -1,41 +1,15 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
+import images from './data';
+
 import Info from '../info/info.jsx';
 import Search from '../search/search.jsx';
 import GetApp from '../getApp/getApp.jsx';
 
-import Artisian from './images/artisian.jpg';
-import Bread from './images/bread.jpg';
-import BurgerBoard from './images/burgerBoard.jpg';
-import Burgers from './images/burgers.jpg';
-import ColorBread from './images/colorBread.jpg';
-import Dessert from './images/dessert.jpg';
-import Fancy from './images/fancy.jpg';
-import GreenCake from './images/greenCake.jpg';
-import ChocolatePancake from './images/chocolatePancake.jpg';
-import MixPlate from './images/mixPlate.jpg';
-import Plate from './images/plate.jpg';
-// import Salad from './images/salad.jpg';
-import Shell from './images/shell.jpg';
-import Spaghetti from './images/spaghetti.jpg';
-import StrawberryWaffle from './images/strawberryWaffle.jpg';
-import Taco from './images/taco.jpg';
-import Toast from './images/toast.jpg';
-import Waffle from './images/waffle.jpg';
-import Walnut from './images/walnut.jpg';
-
-import $ from 'jquery';
-
-const images = [
-  {left: Taco, right: Waffle},
-  {left: Toast, right: BurgerBoard},
-  {left: Fancy, right: GreenCake},
-  {left: Plate, right: ColorBread},
-]
-
 export default class Hero extends Component {
   constructor() {
     super();
-    this.state = {active: 0}
+    this.state = { active: 0 }
     this.counter = 0;
     this.keywords = ['days', 'feelings', 'mornings', 'stories']
   }
@@ -51,8 +25,8 @@ export default class Hero extends Component {
     const $lw = $('#info-lw');
 
     setInterval(() => {
-      const $imageLeft = $('#hero .active-left');
-      const $imageRight = $('#hero .active-right');
+      const $imageLeft = $('.left.active');
+      const $imageRight = $('.right.active');
       const $infoText = $('.info-text');
       const $infoTextNext = $('.next');
       const lw = $lw.width() + $lw.position().left;
@@ -78,9 +52,9 @@ export default class Hero extends Component {
         //delete old images
         $imageLeft.remove();
         $imageRight.remove();
-        $('.image-left').addClass('active-left').css({zIndex: -1});
-        $('.image-right').addClass('active-right').css({zIndex: -1});
-
+        
+        $('.left', '.right').addClass('active');
+   
         this.counter++;
 
         //append new span tag for next info text:
@@ -89,9 +63,9 @@ export default class Hero extends Component {
         `)
         
         //prepend new images with zindex of 2 after animation is complete;
-        $('#hero').prepend(`<img class="hero-image image-left" src=${images[(this.counter+1)%images.length].left} style="z-index: -2" />`);
+        $('.images').prepend(`<img class="left" src=${images[(this.counter+1)%images.length].left} />`);
 
-        $('#hero').prepend(`<img class="hero-image image-right" src=${images[(this.counter+1)%images.length].right} style="z-index: -2" />`);
+        $('.images').prepend(`<img class="right" src=${images[(this.counter+1)%images.length].right} />`);
 
       }, 700)
     }, 6000)
@@ -101,15 +75,25 @@ export default class Hero extends Component {
   render() {
     return (
       <div id="hero" className="d-flex">
-        <div id="hero-description" className="middle w-100">
-          <Info word={this.keywords[this.counter]} next={this.keywords[(this.counter+1)%images.length]}></Info>
-          <Search></Search>
+        <div className="description">
+          <Info 
+            word={this.keywords[this.counter]} 
+            next={this.keywords[(this.counter+1)%images.length]} />
+          <Search />
         </div>
-        <GetApp color="white" bgColor="white" hoverColor="lightgrey"/>
-        <img className="hero-image image-left active-left" src={images[this.counter].left}/>
-        <img className="hero-image image-right active-right" src={images[this.counter].right}/>
-        <img className="hero-image image-left" src={images[(this.counter+1)%images.length].left} style={{zIndex: -2}}/>
-        <img className="hero-image image-right" src={images[(this.counter+1)%images.length].right} style={{zIndex: -2}}/>
+
+        <GetApp 
+          color="white" 
+          bgColor="white" 
+          hoverColor="lightgrey"
+        />
+
+        <div className="images">
+        <img className="left active" src={images[this.counter].left}/>
+        <img className="right active" src={images[this.counter].right}/>
+        <img className="left" src={images[(this.counter+1)%images.length].left} />
+        <img className="right" src={images[(this.counter+1)%images.length].right} />
+        </div>
       </div>
     );
   }

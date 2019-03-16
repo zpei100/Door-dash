@@ -8,7 +8,22 @@ import Order from './order/order.jsx';
 import Footer from './footer/footer.jsx';
 import Slides from './slides/slides.jsx';
 
-export default ({carouselData}) => (
+const carouselData = [
+  {
+    title: 'FIND YOUR FAVORITES',
+    paragraph: 'Satisfy your cravings with a huge selection of restaurants.'
+  },
+  {
+    title: 'EASY ORDERING',
+    paragraph: 'Food is just a few taps away. Plus, group ordering makes entertaining a breeze.'
+  },
+  {
+    title: 'REAL-TIME TRACKING',
+    paragraph: 'See when your order will arive.'
+  }
+]
+
+export default () => (
   <React.Fragment>
     <Nav/>
     <Hero />

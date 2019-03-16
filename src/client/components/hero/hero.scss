@@ -3,24 +3,34 @@
   width: 100%;
   position: relative;
   
-  #hero-description { padding: 2.5% }
-
-  .hero-image {
-    object-fit: cover;
-    width: 75%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
+  .description { 
+    padding: 2.5%;
+    align-self: center;
+    width: 100%; 
   }
 
-  .image-left {
+  .images {
+    img {
+      object-fit: cover;
+      width: 75%;
+      height: 100%;
+      position: absolute;
+      z-index: -2;
+    }
+
+    .active { z-index: -1 }
+  }
+
+  
+
+  .left {
     left: 0;
     transition: 0.7s linear;
     clip-path: polygon(0% 0%, calc(100vw - 100%) 0%, 100% 100%, 0% 100%);
     object-position: right;
   }
 
-  .image-right {
+  .right {
     right: 0;
     transition: 0.7s linear;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, calc(200% - 100vw) 100%);

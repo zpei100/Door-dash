@@ -1,9 +1,9 @@
 import React from 'react';
 import Slide from '../slide/slide.jsx';
 
-import Image1 from '../assets/images/imageSlide01.jpg';
-import Image2 from '../assets/images/imageSlide02.jpg';
-import Image3 from '../assets/images/imageSlide03.jpg';
+import Image1 from './images/imageSlide01.jpg';
+import Image2 from './images/imageSlide02.jpg';
+import Image3 from './images/imageSlide03.jpg';
 
 const teal = "#009494"
 const brown = "#B28B84"
