@@ -3,19 +3,16 @@ import Flag from './flag.jsx';
 import $ from 'jquery';
 
 export default class Search extends Component {
-  highlight() {
-    this.search.css({boxShadow: '0 0 3pt 2pt #80CED7'});
-  }
 
-  removeHighlight() {
-    this.search.css({boxShadow: 'none'})
-  }
+  highlight() { this.search.css({boxShadow: '0 0 3pt 2pt #80CED7'}) }
+  
+  removeHighlight() { this.search.css({boxShadow: 'none'}) }
 
   render() {
     return (
-      <div ref={e => this.search = $(e)} className="search w-auto o-hidden" style={{display: 'table'}}>
-        <div className="h-100" style={{display: 'table-cell'}}>
-          <span className="p-2"><Flag/></span>
+      <div ref={e => this.search = $(e)} className="search">
+        <div className="input-bar">
+          <span className="icon"><Flag/></span>
           <input
             onFocus={e => this.highlight()} 
             onBlur={e => this.removeHighlight()}

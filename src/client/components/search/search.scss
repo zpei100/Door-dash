@@ -1,25 +1,28 @@
 @import '../../css/variables.scss';
 
 .search {
-  display: table !important;
+  display: table;
   white-space: nowrap;
   border-radius: 30px;
   border: 0.5px solid grey;
-  
-  input:focus {
-    outline: none;
-  }
-  
-  //search bar, including icon
-  & > div { 
-    background: white;
+  width: auto;
+  overflow: hidden;
+
+  .icon { padding: 0 2% 0 4% }
+
+  .input-bar {
     display: table-cell;
-    align-items: center;
-    width: 430px; 
+    height: 100%;
+    width: 430px;
+    vertical-align: middle;
+    background: white;
+
+    input { 
+      width: 100%; 
+      &:focus { outline: none };
+    }
   }
-
-  input {width: 100%}
-
+  
   button {
     display: table-cell;
     box-sizing: border-box;

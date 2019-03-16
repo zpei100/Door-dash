@@ -9,8 +9,8 @@ export default () => (
     viewBox="0 0 512 512" 
     style={{
       xmlSpace: "preserve", 
-      width:"14pt", 
-      height:"14pt", 
+      width:"11pt", 
+      height:"11pt", 
       class:""
     }}
     >
