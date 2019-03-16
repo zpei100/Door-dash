@@ -31,7 +31,7 @@ export default class Hero extends Component {
       const $description = $('#hero-description .description');
 
       const pStart = $start.width() + $start.position().left;
-      const nextCounter = (this.counter + 1) % images.length;
+      const nextCounter = (this.counter + 2) % images.length;
 
       //text vanish animation:
       $word.css({opacity: 0, transform: 'translateX(-20%)'});
@@ -53,6 +53,9 @@ export default class Hero extends Component {
         $('.right').addClass('active');
    
         this.counter++;
+
+        console.log('about to add : ', images[nextCounter].word, ' next counter is: ', nextCounter)
+
         //append new span tag for next info text:
         $description.append(`<span class="word next"> ${images[nextCounter].word}</span> `)
         
