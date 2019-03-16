@@ -1,12 +1,14 @@
 @import '../../css/variables';
+@import '../button/button';
 
 #nav {
   color: $red;
-  border-bottom: 0.2px solid lightgray;
+  display: flex;
   position: fixed;
   width: 100%;
   background: white;
   height: 50px;
+  border-bottom: 0.2px solid lightgray;
   z-index: 10;
 
   //doordash title and logo
@@ -14,6 +16,15 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    letter-spacing: 2px;
+    font-size: 18px;
+    align-self: center;
+    font-weight: 1000;
+  }
+
+  .buttons {
+    margin-left: auto;
+    display: flex;
   }
 
   //sign in and sign up buttons

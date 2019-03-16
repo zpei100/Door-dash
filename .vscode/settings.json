@@ -4,6 +4,11 @@
     "__error": "Not found",
     ".babelrc": true,
     "package-lock.json": true,
-    ".vscode": true
+    ".vscode": true,
+    ".gitignore": true,
+    "package.json": true,
+    "readme.md": true,
+    "webpack.config.js": true,
+    "src/server": true
   }
 }
