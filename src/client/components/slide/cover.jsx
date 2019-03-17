@@ -6,7 +6,7 @@ export default class Cover extends Component {
     const style = {[direction]: '0%'}
 
     return (
-      <div className="slide-cover" style={style} />
+      <div className="cover" style={style} />
     );
   }
 }

@@ -12,7 +12,7 @@ export default class ImageSlide extends Component {
     console.log(direction)
     
     return (
-      <img className="slide-image" src={Image} style={{clipPath: polygon, [margin]: 'auto'}}/>
+      <img className="image" src={Image} style={{clipPath: polygon, [margin]: 'auto'}}/>
     );
   }
 }

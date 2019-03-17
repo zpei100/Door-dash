@@ -7,22 +7,21 @@ import $ from 'jquery';
 export default class Slide extends Component {
   componentDidMount() {
     const { direction } = this.props;
-
     const $container = this.container;
-    const $cover = $container.find('.slide-cover');
+    const $cover = $container.find('.cover');
     const $window = $(window);
-
-    const pContainer = $container.position().top;
-    
     const wait = 15;
-    let time = new Date();
-
     const startView = 0.6;
     const endView = 0;
+
+    let time = new Date();
 
     $window.scroll(function() {
       if(new Date() - time > wait) {
         time = new Date();
+        //pContainer must be defined here; due to main.css occuring after js;
+        const pContainer = $container.position().top;
+
         const pWindow = $window.scrollTop();
         const pDiff = pContainer - pWindow;
         const pPercentage = pDiff / $container.height();
@@ -38,20 +37,16 @@ export default class Slide extends Component {
   }
 
   render() {
-    const slideStyle = {
-      overflow: 'hidden',
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      position: 'relative'
-    }
-
-    const { direction, Image } = this.props;
+    const { direction } = this.props;
     return (
-      <div ref={e => this.container = $(e)} style={{flexDirection: direction === 'right' ? 'row' : 'row-reverse', ...slideStyle}}>
-        <Description {...this.props}/>
-        <ImageSlide direction={direction} Image={Image}/>
-        <Cover direction={direction}/>
+      <div 
+        ref={e => this.container = $(e)} 
+        style={{flexDirection: direction === 'right' ? 'row' : 'row-reverse'}}
+        className="polygon-slide"
+      >
+        <Description {...this.props} />
+        <ImageSlide {...this.props} />
+        <Cover direction={direction} />
       </div>
     );
   }

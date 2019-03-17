@@ -5,7 +5,7 @@ export default ({title, paragraph, linkText, direction, color}) => {
   
   return (
     <div 
-      className="slide-description" 
+      className="description" 
       style={{[padding]: '6%'}}
     >
       <p style={{color}}>{title}</p>

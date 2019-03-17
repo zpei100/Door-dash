@@ -54,8 +54,6 @@ export default class Hero extends Component {
    
         this.counter++;
 
-        console.log('about to add : ', images[nextCounter].word, ' next counter is: ', nextCounter)
-
         //append new span tag for next info text:
         $description.append(`<span class="word next"> ${images[nextCounter].word}</span> `)
         
