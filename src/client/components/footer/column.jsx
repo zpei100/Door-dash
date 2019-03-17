@@ -9,9 +9,16 @@ export default ({title, list}) => {
         <ul>
           {list.slice(0, 6).map(item => <li>{item}</li>)}
         </ul>
-        {list.length > 6 ? <ul style={{marginLeft: '20%', 'whiteSpace': 'nowrap'}}>
-          {list.slice(6).map(item => <li>{item}</li> )}
-        </ul> : ''}
+
+        {/* hard coded second column */}
+        {
+          list.length > 6 ? 
+            <ul className="second-column">
+              {list.slice(6).map(item => <li>{item}</li> )}
+            </ul> 
+          : ''
+        }
+
       </div>
     </div>
 )}

@@ -23,14 +23,13 @@ export default class Icon extends Component {
 
     return (
       <span 
-        style={{borderRadius: '50%', padding: '10px', cursor: 'pointer', background: bgColor, display: 'flex', alignItems: 'center'}}
+        style={{ background: bgColor }}
         ref={e => this.icon = $(e)}
+        className="icon"
         onMouseEnter={this.highlightBg} 
         onMouseLeave={this.removeHighlight}
       >
-        <img 
-          src={src} 
-          style={{height: '22px', width: '22px', background: bgColor}} />
+        <img src={src} style={{background: bgColor}} />
       </span>
     );
   }

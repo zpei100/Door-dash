@@ -3,28 +3,21 @@ import Flag from './flag.jsx';
 import $ from 'jquery';
 
 export default class Search extends Component {
-
-  highlight() { this.search.css({boxShadow: '0 0 3pt 2pt #80CED7'}) }
-  
-  removeHighlight() { this.search.css({boxShadow: 'none'}) }
-
   render() {
     return (
       <div ref={e => this.search = $(e)} className="search">
         <div className="input-bar">
           <span className="icon"><Flag/></span>
           <input
-            onFocus={e => this.highlight()} 
-            onBlur={e => this.removeHighlight()}
+            onFocus={e => this.search.toggleClass('teal-shadow')} 
+            onBlur={e => this.search.toggleClass('teal-shadow')} 
             type="text" 
-            className="px-14 ls-1 border-transparent"
             placeholder="Enter your delivery address"
           />
         </div>
         <button 
-          className="px-14 ls-1 border-transparent heavy"
-          onMouseEnter={e => $(e.target).css({filter: 'brightness(80%)'})}
-          onMouseLeave={e => $(e.target).css({filter: 'brightness(100%)'})}
+          onMouseEnter={e => $(e.target).toggleClass('dark')}
+          onMouseLeave={e => $(e.target).toggleClass('dark')}
         >
           Find Restaurants
         </button>

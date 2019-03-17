@@ -10,9 +10,17 @@ export default class Slide extends Component {
     const $container = this.container;
     const $cover = $container.find('.cover');
     const $window = $(window);
-    const wait = 15;
-    const startView = 0.6;
-    const endView = 0;
+
+    //animation throttle;
+    const wait = 10;
+
+    //animation starts when 40% of container is visible;
+    //animation ends when 100% of container is visible; 
+    const animationStart = 0.4;
+    const animationEnd = 1; 
+
+    const startView = 1 - animationStart; 
+    const endView = 1 - animationEnd;
 
     let time = new Date();
 
@@ -26,11 +34,13 @@ export default class Slide extends Component {
         const pDiff = pContainer - pWindow;
         const pPercentage = pDiff / $container.height();
 
-        if(pPercentage > startView) $cover.css({[direction]: '0%'});
-        else if(pPercentage < endView) $cover.css({[direction]: '-60%'});
+        const sign = direction === 'right' ? '+' : '-';
+
+        if(pPercentage > startView) $cover.css({transform: 'translateX(0%)'});
+        else if(pPercentage < endView) $cover.css({transform: `translateX(${sign}100%)`});
         else {
-          const percentageShown = -0.6/(endView - startView) * (pPercentage - startView) * 100;
-          $cover.css({[direction]: `${percentageShown}%`})
+          const percentageShown =  100 * (pPercentage - startView) / (endView - startView);
+          $cover.css({transform: `translateX(${sign + percentageShown}%)`})
         }
       }
     })

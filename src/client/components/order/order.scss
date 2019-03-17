@@ -4,7 +4,12 @@
   align-items: center;
   margin-bottom: 3%;
   
-  p { letter-spacing: 2px; font-size: 40px; text-align: center }
+  //there are nested titles
+  & > .title { 
+    letter-spacing: 2px; 
+    font-size: 40px; 
+    text-align: center 
+  }
 
   //gives margin spacing only for the search bar
   .search { margin: 3%; border: 0.5px solid lightgrey }

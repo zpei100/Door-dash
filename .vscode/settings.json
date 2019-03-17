@@ -8,7 +8,6 @@
     ".gitignore": true,
     "package.json": true,
     "readme.md": true,
-    "webpack.config.js": true,
     "src/server": true,
     "dist/assets": true,
     "dist/js": true,
@@ -17,6 +16,12 @@
     "src/client/components/button": true,
     "src/client/components/nav": true,
     "src/client/components/slides": true,
-    "src/client/components/slide": true
+    "src/client/components/discover": true,
+    "src/client/components/search": true,
+    "src/client/components/info": true,
+    "src/client/components/hero": true,
+    "src/client/components/order": true,
+    "src/client/components/getApp": true,
+    "src/client/components/footer": true
   }
 }

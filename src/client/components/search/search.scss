@@ -1,4 +1,7 @@
 @import '../../css/variables.scss';
+@import '../../css/variables';
+
+.teal-shadow { box-shadow: 0 0 3pt 2pt $teal }
 
 .search {
   display: table;
@@ -7,28 +10,36 @@
   border: 0.5px solid grey;
   width: auto;
   overflow: hidden;
+  font-size: 14px;
 
+  .dark { filter: brightness(80%) }
   .icon { padding: 0 2% 0 4% }
-
+  
   .input-bar {
     display: table-cell;
     height: 100%;
     width: 430px;
     vertical-align: middle;
     background: white;
+    letter-spacing: 1px;
 
     input { 
       width: 100%; 
+      border: transparent;
+      letter-spacing: 1px;
       &:focus { outline: none };
     }
   }
   
   button {
     display: table-cell;
+    letter-spacing: 1px;
     box-sizing: border-box;
     background-color: $red;
     color: white;
     padding: 7% 14%;
     transition: 0.3s;
+    border: transparent;
+    font-weight: 600;
   }
 }

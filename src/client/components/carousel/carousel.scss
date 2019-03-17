@@ -1,3 +1,11 @@
+.carousel-title {
+  font-size: 36px; 
+  font-weight: 600; 
+  letter-spacing: 2.5px; 
+  text-align: center; 
+  margin: 2%
+}
+
 #carousel-container {
   display: flex;
   flex-direction: column;
@@ -6,43 +14,62 @@
   height: 390px;
   overflow: hidden;
   position: relative; 
+
+  //iphone -- image container
+  & > img {
+    position: absolute;
+    width: 275px;
+    transform: translateX(2px) translateY(-65px);
+    z-index: -1;
+  }
+
+  #carousel { width: 234px }
+
+  .carousel-item {
+    width: 100%;
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
 }
 
-#indicator-buttons { margin: 8% }
+#captions-container {
+  width: 35%;
+  margin: auto;
+  align-items: center;
 
-.indicator-button {
-  height: 8px;
-  width: 35px;
-  margin: 10px;
-  border: none;
-  border-radius: 12px;
-  background: lightgrey; 
-  cursor: pointer;
-  &:focus { outline: none }
-}
+  hr { margin-top: 0 }
 
-#button-float {
-  background: $red;
-  position: absolute;
-  transition: 0.2s ease-in;
-  padding: 1px 6px;
-}
+  .captions { height: 100px }
+  .indicator-buttons { 
+    margin: 8%;
+    display: flex;
+    justify-content: center;
+  }
 
-#captions {
-  height: 100px;
-}
-
-.caption {
-  text-align: center;
-  div { margin: 2% 0 }
-  .caption-title { font-size: 24px; font-weight: 600; letter-spacing: 2px}
-  .caption-paragraph { font-size: 16px; color: grey }
-}
-
-.carousel-title {
-  font-size: 36px; 
-  font-weight: 600; 
-  letter-spacing: 2.5px; 
-  text-align: center; 
-  margin: 2%
+  .indicator-button {
+    height: 8px;
+    width: 35px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    background: lightgrey; 
+    cursor: pointer;
+    &:focus { outline: none }
+  }
+  
+  .button-float {
+    background: $red;
+    position: absolute;
+    transition: 0.2s ease-in;
+    padding: 1px 6px;
+  }
+  
+  .caption {
+    text-align: center;
+    div { margin: 2% 0 }
+    .caption-title { font-size: 24px; font-weight: 600; letter-spacing: 2px}
+    .caption-paragraph { font-size: 16px; color: grey }
+  }
 }

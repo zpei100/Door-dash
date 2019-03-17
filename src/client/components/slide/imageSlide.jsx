@@ -8,8 +8,6 @@ export default class ImageSlide extends Component {
     const rightSlice = 'polygon(0% 0%, 100% 0%, 100% 100%, 50% 100%)';
     const polygon = direction === 'right' ? rightSlice : leftSlice;
     const margin = direction === 'right' ? 'marginLeft' : 'marginRight'
-
-    console.log(direction)
     
     return (
       <img className="image" src={Image} style={{clipPath: polygon, [margin]: 'auto'}}/>

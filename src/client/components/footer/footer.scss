@@ -4,14 +4,24 @@
   padding: 2%;
   color: white;
   font-size: 14px;
+
+  & > div {
+    width: 65%;
+    margin: auto;
+  }
   
   ul { 
     list-style: none; 
     padding: 0; 
   }
-}
 
-.footer-top {
-  display: flex;
-  justify-content: space-around;
+  .second-column {
+    margin-left: 20%;
+    white-space: nowrap;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-around;
+  }
 }
