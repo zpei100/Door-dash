@@ -22,7 +22,7 @@ export default class Hero extends Component {
     // this defeats the purpose of using React, and must be fixed later
     const $hero = $('#hero');
     const $start = $hero.find('.start');
-
+    
     setInterval(() => {
       const $imageLeft = $hero.find('.left.active');
       const $imageRight = $hero.find('.right.active');
@@ -38,15 +38,18 @@ export default class Hero extends Component {
       $nextWord.css({left: `${pStart}px`, opacity: 1})
 
       // diagonal slide animations:
-      $imageLeft.css({ clipPath: 'polygon(0% 0%, calc(100vw - 200%) 0%, 0% 100%, 0% 100%' })
-      $imageRight.css({ clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, calc(300% - 100vw) 100%)' })
+      // $imageLeft.css({ clipPath: 'polygon(0% 0%, calc(100vw - 200%) 0%, 0% 100%, 0% 100%' })
+      // $imageRight.css({ clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, calc(300% - 100vw) 100%)' })
+
+      $imageLeft.addClass('lfade');
+      $imageRight.addClass('rfade');
 
       setTimeout(() => {
         //delete old info text;
         $word.remove();
         $nextWord.removeClass('next');
 
-        //delete old images;
+        // delete old images;
         $imageLeft.remove();
         $imageRight.remove();
         $('.left').addClass('active');
@@ -60,7 +63,7 @@ export default class Hero extends Component {
         //prepend new images with zindex of 2 after animation is complete;
         $('.images').prepend(`<img class="left" src=${images[nextCounter].left} />`);
         $('.images').prepend(`<img class="right" src=${images[nextCounter].right} />`);
-      }, 700)
+      }, 1400)
 
     }, 6000)
   }

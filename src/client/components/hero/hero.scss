@@ -1,5 +1,6 @@
 #hero {
-  height: 100vh;
+  max-height: 100vh;
+  height: 86vw;
   width: 100%;
   position: relative;
   
@@ -16,9 +17,32 @@
       height: 100%;
       position: absolute;
       z-index: -2;
-      transition: 0.7s linear;
+      // transition: 0.7s linear;
     }
-    .active { z-index: -1 }
+
+    .active { 
+      z-index: -1 
+    }
+
+    .lfade {
+      animation: left-fade 1.4s;
+    }
+
+    .rfade {
+      animation: right-fade 1.4s;
+    }
+
+    @keyframes disappear {
+      100% {opacity: 0}
+    }
+
+    @keyframes left-fade {
+      100% {clip-path: polygon(0% 0%, calc(100vw - 200%) 0%, 0% 100%, 0% 100%)}
+    }
+
+    @keyframes right-fade {
+      100% {clip-path: polygon(100% 0%, 100% 0%, 100% 100%, calc(300% - 100vw) 100%)}
+    }
 
     .left {
       left: 0;
