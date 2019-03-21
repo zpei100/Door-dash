@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import MediaQuery from 'react-responsive';
 
 import images from './data';
-
-import Info from '../info/info.jsx';
-import Search from '../search/search.jsx';
-import GetApp from '../getApp/getApp.jsx';
+import Content from './content.jsx';
 
 
 export default class Hero extends Component {
@@ -21,13 +19,15 @@ export default class Hero extends Component {
 
     // this defeats the purpose of using React, and must be fixed later
     const $hero = $('#hero');
-    const $start = $hero.find('.start');
+    const $content = $('#hero-content')
+    const $start = $content.find('.start');
     
     setInterval(() => {
       const $imageLeft = $hero.find('.left.active');
       const $imageRight = $hero.find('.right.active');
-      const $word = $hero.find('.word').first();
-      const $nextWord = $hero.find('.next');
+
+      const $word = $content.find('.word').first();
+      const $nextWord = $content.find('.next');
       const $description = $('#hero-description .description');
 
       const pStart = $start.width() + $start.position().left;
@@ -74,27 +74,22 @@ export default class Hero extends Component {
     const nextCounter = (counter + 1) % images.length;
 
     return (
-      <div id="hero" className="d-flex">
-        <div className="description">
-          <Info 
-            word={images[counter].word} 
-            next={images[nextCounter].word} />
-          <Search />
+      <React.Fragment>
+        <div id="hero" className="d-flex">
+          <MediaQuery minWidth={0}>
+            <Content word={images[counter].word} next={images[nextCounter].word} />
+          </MediaQuery>
+          <div className="images">
+            <img className="left active" src={images[counter].left}/>
+            <img className="right active" src={images[counter].right}/>
+            <img className="left" src={images[nextCounter].left} />
+            <img className="right" src={images[nextCounter].right} />
+          </div>
         </div>
-
-        <GetApp 
-          color="white" 
-          bgColor="white" 
-          hoverColor="lightgrey"
-        />
-
-        <div className="images">
-          <img className="left active" src={images[counter].left}/>
-          <img className="right active" src={images[counter].right}/>
-          <img className="left" src={images[nextCounter].left} />
-          <img className="right" src={images[nextCounter].right} />
-        </div>
-      </div>
+        {/* <MediaQuery maxWidth={960}>
+          <Content word={images[counter].word} next={images[nextCounter].word} />
+        </MediaQuery> */}
+      </React.Fragment>
     );
   }
 }

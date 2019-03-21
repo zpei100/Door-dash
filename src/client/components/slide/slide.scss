@@ -3,7 +3,8 @@ $slide-description-width: 50%;
 
 .polygon-slide {
   overflow: hidden;
-  height: 100vh;
+  max-height: 100vh;
+  height: 86vw;
   display: flex;
   align-items: center;
   position: relative;

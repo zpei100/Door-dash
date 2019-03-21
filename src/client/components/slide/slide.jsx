@@ -3,6 +3,7 @@ import Description from './description.jsx';
 import ImageSlide from './imageSlide.jsx';
 import Cover from './cover.jsx';
 import $ from 'jquery';
+import MediaQuery from 'react-responsive';
 
 export default class Slide extends Component {
   componentDidMount() {
@@ -14,10 +15,10 @@ export default class Slide extends Component {
     //animation throttle;
     const wait = 10;
 
-    //animation starts when 40% of container is visible;
-    //animation ends when 100% of container is visible; 
-    const animationStart = 0.4;
-    const animationEnd = 1; 
+    //animation starts when 20% of container is visible;
+    //animation ends when 80% of container is visible; 
+    const animationStart = 0.2;
+    const animationEnd = 0.8; 
 
     const startView = 1 - animationStart; 
     const endView = 1 - animationEnd;
@@ -49,15 +50,23 @@ export default class Slide extends Component {
   render() {
     const { direction } = this.props;
     return (
-      <div 
-        ref={e => this.container = $(e)} 
-        style={{flexDirection: direction === 'right' ? 'row' : 'row-reverse'}}
-        className="polygon-slide"
-      >
-        <Description {...this.props} />
-        <ImageSlide {...this.props} />
-        <Cover direction={direction} />
-      </div>
+      <React.Fragment>
+        <div 
+          ref={e => this.container = $(e)} 
+          style={{flexDirection: direction === 'right' ? 'row' : 'row-reverse'}}
+          className="polygon-slide"
+        >
+          <MediaQuery minWidth={0}>
+            <Description {...this.props} />
+          </MediaQuery>
+
+          <ImageSlide {...this.props} />
+          <Cover direction={direction} />
+        </div>
+        {/* <MediaQuery maxWidth={960}>
+          <Description {...this.props} />
+        </MediaQuery> */}
+      </React.Fragment>
     );
   }
 }
