@@ -4,12 +4,13 @@
   padding: 2%;
   color: white;
   font-size: 14px;
+  box-sizing: border-box;
 
   & > div {
-    width: 65%;
     margin: auto;
+    max-width: 1000px;
   }
-  
+
   ul { 
     list-style: none; 
     padding: 0; 

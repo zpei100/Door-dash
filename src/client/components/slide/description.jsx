@@ -6,7 +6,7 @@ export default ({title, paragraph, linkText, direction, color}) => {
   return (
     <div 
       className="description" 
-      style={{[padding]: '6%'}}
+      // style={{[padding]: '6%'}}
     >
       <p style={{color}}>{title}</p>
       <p>{paragraph}</p>

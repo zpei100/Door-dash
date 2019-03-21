@@ -50,23 +50,23 @@ export default class Slide extends Component {
   render() {
     const { direction } = this.props;
     return (
-      <React.Fragment>
+      <div className="polygon-slide-container">
         <div 
           ref={e => this.container = $(e)} 
           style={{flexDirection: direction === 'right' ? 'row' : 'row-reverse'}}
           className="polygon-slide"
         >
-          <MediaQuery minWidth={0}>
+          <MediaQuery minWidth={960}>
             <Description {...this.props} />
           </MediaQuery>
 
           <ImageSlide {...this.props} />
           <Cover direction={direction} />
         </div>
-        {/* <MediaQuery maxWidth={960}>
+        <MediaQuery maxWidth={960}>
           <Description {...this.props} />
-        </MediaQuery> */}
-      </React.Fragment>
+        </MediaQuery>
+      </div>
     );
   }
 }

@@ -14,21 +14,38 @@ $slide-description-width: 50%;
     position: absolute;
     width: $slide-image-width;
     height: 100%;
+
+    @media screen and (max-width: 960px) {
+      display: none;
+    }
   }
 
   .image {
     height: 100%;
     object-fit: cover;
     width: $slide-image-width;
-  }
 
+    @media screen and (max-width: 960px) {
+      width: 100%;
+      clip-path: none !important;
+    }
+  }
+}
+
+.polygon-slide-container {
   .description {
     z-index: 1;
     width: $slide-description-width;
     position: absolute;
     box-sizing: border-box;
+    margin: 4%;
 
-    p {margin: 4%}
+    @media screen and (max-width: 960px) {
+      width: 100%;
+      position: relative;
+    }
+
+    // p {margin: 4%}
 
     p:nth-child(1) {
       letter-spacing: 2px;
